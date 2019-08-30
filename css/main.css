@@ -1,0 +1,578 @@
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Tajawal:400,700');
+body {
+  margin: 0;
+  font-family: 'Tajawal', sans-serif;
+  color: #838383;
+}
+
+/*
+
+MOBILE CSS
+
+*/
+
+/* NAVIGATION */
+
+header {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  color: white;
+  margin: 5px 0;
+}
+
+.logo h1 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.logo h2 {
+  font-size: 0.7em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: #9e9672;
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 150ms ease-in-out 150ms;
+}
+
+.scroll-nav {
+  transition: 1s;
+  background-color: #9e9672;
+}
+
+/* COVER AREA */
+
+#cover {
+  background: url('../img/brooke-lark-275181-unsplash__1532435370_24.211.57.29.jpg')
+    no-repeat;
+  height: 95vh;
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+
+.cover-text {
+  text-align: center;
+  margin: 0 auto;
+  padding: 40% 0;
+}
+
+.cover-text h3 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.cover-text h4 {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 2em;
+  margin: 0;
+}
+
+/* ABOUT AND RESERVATION */
+
+#about {
+  background-color: rgb(225, 225, 205);
+  height: 450px;
+}
+
+.about-content {
+  max-width: 950px;
+  height: 535px;
+  margin: 0 auto;
+  position: relative;
+  top: -42.5px;
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.book-now,
+.about-detail {
+  background: white;
+  text-align: center;
+  line-height: 1.5em;
+  font-size: 1em;
+}
+
+.book-now {
+  padding: 1.5em;
+}
+
+#about h5 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 2em;
+  font-weight: 500;
+  margin: 0;
+  color: black;
+}
+
+.book-now button {
+  border: 1px solid #9e9672;
+  color: #9e9672;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  display: inline-block;
+  padding: 1em 1.5em;
+  cursor: pointer;
+}
+
+.book-now button:hover {
+  background-color: #9e9672;
+  color: white;
+  transition: background-color ease-in-out 250ms;
+}
+
+.about-detail {
+  padding: 1.5em;
+}
+
+.about-content .image1 {
+  background: url(../img/scott-webb-220434-unsplash__1532691990_24.211.57.29.jpg)
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 250px;
+}
+
+.about-content .image2 {
+  background: url(../img/lefteris-kallergis-581891-unsplash__1532691885_24.211.57.29.jpg)
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: none;
+}
+
+/* 
+SPECIALTIES
+*/
+
+#specialties {
+  background: url('../img/clem-onojeghuo-97092-unsplash__1532789398_24.211.57.29.jpg')
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 65vh;
+  position: relative;
+  z-index: -1;
+}
+
+.specialties-text h2 {
+  margin: 0;
+}
+
+.specialties-text {
+  font-size: 1.6em;
+  letter-spacing: 4px;
+  position: absolute;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  left: 0;
+  right: 0;
+  top: 72%;
+  bottom: 0;
+}
+
+#specials {
+  background-color: rgb(225, 225, 205);
+  height: 390px;
+}
+
+.specials-menu {
+  max-width: 1000px;
+  height: 550px;
+  margin: 0 auto;
+  position: relative;
+  top: -42.5px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: 'text1 image1' 'image2 text2' 'text3 image3' 'image4 text4';
+}
+
+.special-text {
+  background-color: white;
+  text-align: center;
+}
+
+.special-text h5 {
+  margin: 1em auto 0;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+}
+
+.special-text p:nth-child(3) {
+  font-weight: bold;
+  color: #9e9672;
+}
+
+.sec1 {
+  grid-area: text1;
+}
+
+.sec2 {
+  grid-area: image1;
+  background: url('../img/taylor-kiser-373479-unsplash__1532799510_24.211.57.29.jpg')
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.sec3 {
+  grid-area: text2;
+}
+
+.sec4 {
+  grid-area: image2;
+  background: url('../img/sara-dubler-714318-unsplash__1532799493_24.211.57.29.jpg')
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.sec5 {
+  grid-area: image3;
+  background: url('../img/monika-grabkowska-513682-unsplash__1532799475_24.211.57.29.jpg')
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.sec6 {
+  grid-area: text3;
+}
+
+.sec7 {
+  grid-area: image4;
+  background: url('../img/jannis-brandt-674859-unsplash__1532799430_24.211.57.29.jpg')
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.sec8 {
+  grid-area: text4;
+}
+
+/*
+ SEPERATOR
+ */
+
+#section {
+  height: 65vh;
+  background: url('../img/markus-spiske-139525-unsplash.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* 
+MENU
+*/
+
+#menu {
+  background: white;
+}
+
+.menu-header {
+  text-align: center;
+  margin: 5em 0 0;
+}
+
+.menu-header h2 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 2.5em;
+  color: black;
+  margin-bottom: 70px;
+  /* border-bottom: 3px solid #9e9672; */
+}
+
+.menu-header span {
+  font-weight: 700;
+  font-size: 1.4em;
+  letter-spacing: 1px;
+  color: #a1a0a0;
+  text-transform: uppercase;
+}
+
+.menu-items {
+  display: grid;
+}
+
+.item {
+  margin: 0 2.7em;
+  display: flex;
+}
+
+.item-text {
+  float: left;
+}
+
+.item-text h5 {
+  font-weight: 700;
+  color: black;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  margin-bottom: 0.7em;
+}
+
+.item-price {
+  font-family: 'Kaushan Script', cursive;
+  color: #9e9672;
+  font-size: 2.5em;
+  width: 75px;
+  margin: auto;
+}
+
+/* 
+
+FOOTER 
+
+*/
+
+footer {
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+  background: #9e9672;
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-template-areas: 'left right';
+}
+
+.footer-left {
+  grid-area: left;
+}
+
+.footer-left span:nth-child(1) {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.5em;
+  margin: 0;
+  padding-top: 25px;
+  display: block;
+}
+
+.footer-left span:nth-child(2) {
+  font-size: 0.7em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  display: block;
+}
+
+.footer-left p {
+  margin: 0;
+}
+
+.footer-left a {
+  color: white;
+}
+
+.footer-right {
+  grid-area: right;
+}
+
+.footer-right ul {
+  padding-top: 15px;
+  text-transform: uppercase;
+  list-style: none;
+}
+
+.footer-right li {
+  padding: 5px 0;
+  text-decoration: none;
+}
+
+/* 
+
+TABLET + DESKTOP CSS
+
+*/
+
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 6fr) 1fr;
+  }
+  .logo {
+    grid-column: 2 / span 1;
+  }
+  nav {
+    all: unset;
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  nav a {
+    opacity: 1;
+    position: relative;
+    font-size: 0.9em;
+  }
+  nav ul {
+    display: flex;
+  }
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+  nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: #9e9672;
+    position: absolute;
+    top: -0.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transform-origin: right;
+    transition: transform ease-in-out 250ms;
+  }
+  nav a:hover::before {
+    transform: scale(1, 1);
+  }
+  .cover-text {
+    padding: 15% 0;
+  }
+  .cover-text h3 {
+    font-size: 4em;
+    margin-bottom: 0.2em;
+  }
+  .cover-text h4 {
+    font-size: 3em;
+    letter-spacing: 0.3em;
+  }
+  .about-content {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, minmax(auto, 267.5px));
+    grid-template-areas: 'book    image1 image1' 'image2  about  about';
+  }
+  .about-content .image1 {
+    grid-area: image1;
+  }
+  .about-content .image2 {
+    grid-area: image2;
+    display: block;
+  }
+  .book-now {
+    padding-top: 3em;
+    grid-area: book;
+  }
+  .about-detail {
+    padding: 3em 1em;
+    grid-area: about;
+  }
+  .specialties-text {
+    top: 45%;
+    font-size: 2em;
+    letter-spacing: 5px;
+  }
+  .specials-menu {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, fr);
+    grid-template-areas: 'text1 image1 text2 image2' 'image3 text3 image4 text4';
+  }
+  .special-text {
+    padding-top: 25px;
+  }
+  .menu-items {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
